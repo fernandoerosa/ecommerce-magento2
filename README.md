@@ -47,6 +47,11 @@ php -S 127.0.0.1:8082 -t ./pub/ ./phpserver/router.php
 ```
 ### Comandos uteis
 
+- Aumentar memoria do vm/docker
+```shell
+sudo sysctl -w vm.max_map_count=262144 
+```
+
 - Limpar cache e atualizar indices
 ```
 bin/magento indexer:reindex && bin/magento cache:clean

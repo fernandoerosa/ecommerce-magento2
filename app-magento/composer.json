@@ -71,6 +71,7 @@
         "magento/composer": "^1.10.0-beta1",
         "magento/composer-dependency-version-audit-plugin": "^0.1",
         "magento/magento-composer-installer": ">=0.4.0",
+        "magento/page-builder": "dev-develop",
         "magento/zend-cache": "^1.16",
         "magento/zend-db": "^1.16",
         "magento/zend-pdf": "^1.16",
@@ -400,5 +401,12 @@
             "Magento\\PhpStan\\": "dev/tests/static/framework/Magento/PhpStan/"
         }
     },
-    "prefer-stable": true
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "repositories": {
+        "ext": {
+            "type": "path",
+            "url": "./ext/*/*/*/*/*/*"
+        }
+    }
 }
