@@ -40,6 +40,8 @@ php bin/magento setup:install --base-url=http://127.0.0.1:8082 \
 ```
 | Anote a url do painel administrativo que sera apresentada no final do log. Ex: [SUCCESS]: Magento Admin URI: /admin_06x66s1
 
+| Erro web-site remover app/etc/env.php, o magento cria ele novamente.
+
 ### Acessando o Magento
 
 ```php
