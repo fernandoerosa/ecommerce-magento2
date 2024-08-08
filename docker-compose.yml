@@ -10,7 +10,7 @@ services:
       # - discovery.seed_hosts=opensearch-node1,opensearch-node2 # Nodes to look for when discovering the cluster
       # - cluster.initial_cluster_manager_nodes=opensearch-node1,opensearch-node2 # Nodes eligibile to serve as cluster manager
       - bootstrap.memory_lock=true # Disable JVM heap memory swapping
-      - "OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m" # Set min and max JVM heap sizes to at least 50% of system RAM
+      - "OPENSEARCH_JAVA_OPTS=-Xms4G -Xmx4G" # Set min and max JVM heap sizes to at least 50% of system RAM
       - "DISABLE_INSTALL_DEMO_CONFIG=true" # Prevents execution of bundled demo script which installs demo certificates and security configurations to OpenSearch
       - "DISABLE_SECURITY_PLUGIN=true" # Disables Security plugin
     ulimits:
@@ -18,8 +18,8 @@ services:
         soft: -1 # Set memlock to unlimited (no soft or hard limit)
         hard: -1
       nofile:
-        soft: 65536 # Maximum number of open files for the opensearch user - set to at least 65536
-        hard: 65536
+        soft: 262144 # Maximum number of open files for the opensearch user - set to at least 65536
+        hard: 262144
     volumes:
       - opensearch-data1:/usr/share/opensearch/data # Creates volume called opensearch-data1 and mounts it to the container
     ports:
@@ -37,7 +37,7 @@ services:
   #     - discovery.seed_hosts=opensearch-node1,opensearch-node2 # Nodes to look for when discovering the cluster
   #     - cluster.initial_cluster_manager_nodes=opensearch-node1,opensearch-node2 # Nodes eligibile to serve as cluster manager
   #     - bootstrap.memory_lock=true # Disable JVM heap memory swapping
-  #     - "OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m" # Set min and max JVM heap sizes to at least 50% of system RAM
+  #     - "OPENSEARCH_JAVA_OPTS=-Xms2G -Xmx2G" # Set min and max JVM heap sizes to at least 50% of system RAM
   #     - "DISABLE_INSTALL_DEMO_CONFIG=true" # Prevents execution of bundled demo script which installs demo certificates and security configurations to OpenSearch
   #     - "DISABLE_SECURITY_PLUGIN=true" # Disables Security plugin
   #   ulimits:
